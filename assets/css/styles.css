@@ -169,3 +169,8 @@ a, button { touch-action: manipulation; }
   .foot { padding-bottom: 48px; }
   .toast { bottom: 32px; }
 }
+
+/* Requested visual tweaks: keep the original layout and card styling intact. */
+.mark { display: none; }
+.share { display: none; }
+.portrait { top: calc(var(--W) * .32); width: calc(var(--W) * 1.1); }
