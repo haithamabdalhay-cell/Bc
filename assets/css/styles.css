@@ -170,7 +170,14 @@ a, button { touch-action: manipulation; }
   .toast { bottom: 32px; }
 }
 
-/* Requested visual tweaks: keep the original layout and card styling intact. */
-.mark { display: none; }
-.share { display: none; }
-.portrait { top: calc(var(--W) * .32); width: calc(var(--W) * 1.1); }
+/* Update the tagline visually and scale the portrait down further so more of the torso shows. */
+.intro { font-size: 0; }
+.intro::before {
+  content: "Turning Strategy into Impact. Building Brands. Driving Results";
+  display: block;
+  font-size: 16px;
+}
+.portrait { top: calc(var(--W) * .22); width: calc(var(--W) * .82); }
+@media (min-width: 880px) {
+  .intro::before { font-size: clamp(1.6rem, 2.6vw, 2.3rem); }
+}
