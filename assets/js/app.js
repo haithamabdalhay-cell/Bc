@@ -81,4 +81,13 @@
   if (hint && /Instagram|FBAN|FBAV|FB_IAB|TikTok|Snapchat|MicroMessenger|Line\//i.test(navigator.userAgent)) {
     hint.hidden = false;
   }
+
+  // Keep the portrait at the previous size and render the requested slogan as
+  // ordinary, readable text below “Above The Line”.
+  var visualFixes = document.createElement('style');
+  visualFixes.textContent = '.portrait{top:calc(var(--W)*.32)!important;width:calc(var(--W)*1.1)!important}' +
+    '.intro{font-size:0!important;line-height:1.5!important}' +
+    '.intro::before{content:"Turning Strategy into Impact. Building Brands. Driving Results"!important;display:block!important;font-family:var(--sans)!important;font-size:16px!important;font-weight:400!important;line-height:1.5!important;letter-spacing:normal!important;white-space:normal!important}' +
+    '@media(min-width:880px){.intro::before{font-size:16px!important;line-height:1.5!important;letter-spacing:normal!important}}';
+  document.head.appendChild(visualFixes);
 })();
